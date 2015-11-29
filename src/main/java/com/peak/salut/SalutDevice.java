@@ -51,5 +51,19 @@ public class SalutDevice {
         return String.format("Salut Device | Service Name: %s TTP: %s Human-Readable Name: %s", instanceName, TTP, readableName);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof SalutDevice)) return false;
 
+        SalutDevice that = (SalutDevice) o;
+
+        return !(macAddress != null ? !macAddress.equals(that.macAddress) : that.macAddress != null);
+
+    }
+
+    @Override
+    public int hashCode() {
+        return macAddress != null ? macAddress.hashCode() : 0;
+    }
 }
