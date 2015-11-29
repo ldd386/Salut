@@ -66,4 +66,8 @@ public class SalutDevice {
     public int hashCode() {
         return macAddress != null ? macAddress.hashCode() : 0;
     }
+
+    public String getMacAddress(){
+        return macAddress;
+    }
 }
